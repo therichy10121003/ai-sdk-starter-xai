@@ -1,5 +1,9 @@
 import { createXai } from "@ai-sdk/xai";
 
+if (!process.env.XAI_API_KEY) {
+  throw new Error("XAI_API_KEY environment variable is required");
+}
+
 export const model = createXai({
   apiKey: process.env.XAI_API_KEY,
 });
